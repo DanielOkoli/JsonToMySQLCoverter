@@ -1,0 +1,46 @@
+
+ CREATE TABLE IF NOT EXISTS input(
+ UniqueID VARCHAR(255) PRIMARY KEY,
+ AlarmColor INT,
+ Id INT,
+ DatasourcesCount INT,
+ alertIcon VARCHAR(255),
+ ElementCount INT
+ Name VARCHAR(255),
+ FOREIGN KEY (Name) REFERENCES parameters (pName) 
+ );
+
+ CREATE TABLE IF NOT EXISTS parameters(
+ pName Name VARCHAR(255) PRIMARY KEY,
+ NominalPower INT,
+ PeakPower DECIMAL (4, 2),
+ Description VARCHAR(255),
+ Situation VARCHAR(255),
+ PanelDegradationCorrectionCoefficient DECIMAL (4, 1),
+ TemperatureCorrectionCoefficient DECIMAL (4, 2) 
+ );
+ 
+ INSERT INTO input (UniqueID, AlarmColor, Id, DatasourcesCount, _alertIcon, ElementCount, Name)
+ VALUES ('87111c51-08df-4b29-85c5-43803a994bdd', '-1671296', '8', '0', 'Communications', '640', 'Site 1');
+
+ INSERT INTO parameters (pName, NominalPower, PeakPower, Description, Situation, PanelDegradationCorrectionCoefficient, TemperatureCorrectionCoefficient)
+ VALUES ('Site 1', ' ', '6410.88', '6410.88 kW', 'England', '0.7', '-0.41');
+
+ INSERT INTO input (UniqueID, AlarmColor, Id, DatasourcesCount, _alertIcon, ElementCount, Name)
+ VALUES ('20fb99ae-b940-484a-b3f2-2e7d619b952a', '-256', '4', '0', 'Warning', '514', 'Site 2');
+
+ INSERT INTO parameters (pName, NominalPower, PeakPower, Description, Situation, PanelDegradationCorrectionCoefficient, TemperatureCorrectionCoefficient)
+ VALUES ('Site 2', '3355', '4010.16', '4010.160 kW', ' ', '0.7', '-0.41');
+
+ INSERT INTO input (UniqueID, AlarmColor, Id, DatasourcesCount, _alertIcon, ElementCount, Name)
+ VALUES ('e4429e5a-60ef-437e-8759-2d84574a5289', '-256', '10', '0', 'Communications', '753', 'Site 3');
+
+ INSERT INTO parameters (pName, NominalPower, PeakPower, Description, Situation, PanelDegradationCorrectionCoefficient, TemperatureCorrectionCoefficient)
+ VALUES ('Site 3', '5250', '7257.6', '7.257,6 kW', ' ', '0.7', '-0.41');
+
+ INSERT INTO input (UniqueID, AlarmColor, Id, DatasourcesCount, _alertIcon, ElementCount, Name)
+ VALUES ('bb0a0777-4c50-40ec-82ff-659fa33004a6', '-256', '11', '0', 'Warning', '1938', 'Site 4');
+
+ INSERT INTO parameters (pName, NominalPower, PeakPower, Description, Situation, PanelDegradationCorrectionCoefficient, TemperatureCorrectionCoefficient)
+ VALUES ('Site 4', ' ', '20930.4', '20930.4 kW', ' ', '0.7', '-0.41');
+
